@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinolar</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <section class="secttion">
+    <div class="container">
+      <div class="inner mt-4">
+        <form class="js-form" action="https://echo.htmlacademy.ru">
+          <div class="js-search-inputs d-flex justify-content-between">
+            <input class="js-search-input form-control" type="search" style="width: 200px;" placeholder="Searsh">
+            <input class="js-search-reyting-input form-control ms-5" type="number" style="width: 200px;" placeholder="Searsh reyting">
+            <select class="form-select ms-5" style="width:200px ;" name="categori" id="categories"></select>
+            <select class="form-select ms-5" style="width:200px ;" name="tartib" id="tartib"></select>
+          </div>
+        </form>
+        <ul class="js-kinolar-list list-unstyled mt-3 d-flex justify-content-between flex-wrap"></ul>
+      </div>
+    </div>
+  </section>
+  <template id="js-template">
+    <li class="js-kinolar-item border-css d-flex justify-content-center flex-column my-2 p-2" style="width:500px;">
+      <img class="js-kino-img" src="" alt="">
+      <h5 class="js-kino-title text-center"></h5>
+      <p class="js-kino-fulltitle text-center"></p>
+      <p class="js-kino-categories text-center"></p>
+      <p class="js-kino-reytinggi text-center"></p>
+      <a class="js-kino-trailer text-center" href="" target="_blank">Trailer</a>
+    </li>
+  </template>
+  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/movies.js"></script>
+  <script src="./js/utilis.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
