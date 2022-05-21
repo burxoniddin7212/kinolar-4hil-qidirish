@@ -32,10 +32,10 @@ let logMovies = function(film){
 
   $(".js-kino-img", elTemplateClone).src = film.smallPoster;
   $(".js-kino-img", elTemplateClone).alt = film.title;
-  $(".js-kino-title", elTemplateClone).textContent = film.title;
+  $(".js-kino-title", elTemplateClone).textContent = `Title: ${film.title}`;
   //$(".js-kino-fulltitle", elTemplateClone).textContent = film.fulltitle;
-  $(".js-kino-categories", elTemplateClone).textContent = film.categories;
-  $(".js-kino-reytinggi", elTemplateClone).textContent = film.imdb_rating;
+  $(".js-kino-categories", elTemplateClone).textContent = `Categories: ${film.categories}`;
+  $(".js-kino-reytinggi", elTemplateClone).textContent = `Reyting: ${film.imdb_rating}`;
   $(".js-kino-trailer", elTemplateClone).href = film.trailer;
 
   return elTemplateClone;
