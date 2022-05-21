@@ -13,7 +13,7 @@ movies.splice(100);
 let normalizeMovies =  movies.map((movie, i) =>{
   return {
     id: i,
-    title: movie.Title,
+    title: movie.Title.toString(),
     fulltitle: movie.fulltitle,
     categories: movie.Categories.split("|").join(", "),
     summary: movie.summary,
@@ -33,7 +33,7 @@ let logMovies = function(film){
   $(".js-kino-img", elTemplateClone).src = film.smallPoster;
   $(".js-kino-img", elTemplateClone).alt = film.title;
   $(".js-kino-title", elTemplateClone).textContent = film.title;
-  $(".js-kino-fulltitle", elTemplateClone).textContent = film.fulltitle;
+  //$(".js-kino-fulltitle", elTemplateClone).textContent = film.fulltitle;
   $(".js-kino-categories", elTemplateClone).textContent = film.categories;
   $(".js-kino-reytinggi", elTemplateClone).textContent = film.imdb_rating;
   $(".js-kino-trailer", elTemplateClone).href = film.trailer;

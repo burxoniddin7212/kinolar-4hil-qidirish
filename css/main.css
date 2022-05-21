@@ -1,3 +1,18 @@
+ body{
+  background-color: #131A20;
+}
+
 .border-css{
   border: 1px black solid;
+  border-radius: 4%;
+  background-color: #222933;
+}
+
+.select-input-style{
+  background-color: #222933;
+} 
+
+.style{
+  background-color:#222933 ;
+  color: bisque;
 }
