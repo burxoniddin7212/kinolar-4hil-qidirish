@@ -132,7 +132,7 @@ sortAlifboReytingCreatOption()
 
 
 
-elSearchInput.addEventListener("submit", (evt) => {
+elSearchInput.addEventListener("change", (evt) => {
   evt.preventDefault();
 
   let search = new RegExp(elSearchInput.value.trim(), "gi");
