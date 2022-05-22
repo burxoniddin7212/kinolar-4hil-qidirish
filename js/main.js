@@ -209,7 +209,7 @@ else if(elSearchSort.value == "Reytingi =>"){
 
   sortArry.forEach((reyting) => {
     normalizeMovies.forEach((film) => {
-      if(film.imdb_rating == reyting){
+      if(film.imdb_rating == reyting && !sortTitleReyting.includes(film)){
         sortTitleReyting.push(film);
       }
     })
@@ -226,7 +226,7 @@ else if(elSearchSort.value == "Reytingi <="){
 
   sortArry.forEach((reyting) => {
     normalizeMovies.forEach((film) => {
-      if(film.imdb_rating == reyting){
+      if(film.imdb_rating == reyting && !sortTitleReyting.includes(film)){
         sortTitleReyting.push(film);
       }
     })
