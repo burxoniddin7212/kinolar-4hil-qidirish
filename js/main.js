@@ -107,28 +107,15 @@ let searchCategoriess = function(){
 }
 
 //Function Alifbo va reyting boyicha tartiblashda optionlar yaratish chiqarish
-let sortAlifboReytingCreatOption = function(){
+let selectTartibValue = ["A-Z", "Z-A", "Reytingi =>", "Reytingi <="];
 
-let elSortTitleOption = document.createElement("option");
-elSortTitleOption.textContent = "A-Z";
-elSortTitleOption.value = "A-Z";
-
-let elSortReversTitleOption = document.createElement("option");
-elSortReversTitleOption.textContent = "Z-A";
-elSortReversTitleOption.value = "Z-A";
-
-let elSortReytingOption = document.createElement("option");
-elSortReytingOption.textContent = "Reytingi =>";
-elSortReytingOption.value = "Reytingi =>";
-
-let elSortReverseReytingOption = document.createElement("option");
-elSortReverseReytingOption.textContent = "Reytingi <=";
-elSortReverseReytingOption.value = "Reytingi <=";
-
-elSearchSort.append(elSortTitleOption,elSortReversTitleOption,elSortReytingOption,elSortReverseReytingOption);
+for(let i = 0; i <= selectTartibValue.length; i++){
+  let elSortTitleOption = document.createElement("option");
+  elSortTitleOption.textContent = selectTartibValue[i];
+  elSortTitleOption.value = selectTartibValue[i];
+  elSearchSort.append(elSortTitleOption);
 }
 
-sortAlifboReytingCreatOption()
 
 
 
