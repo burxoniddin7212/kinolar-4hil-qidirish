@@ -12,12 +12,13 @@
   <section class="secttion">
     <div class="container">
       <div class="inner mt-4">
-        <form class="js-form" action="https://echo.htmlacademy.ru">
-          <div class="js-search-inputs d-flex justify-content-between">
-            <input class="js-search-input form-control style" type="search" style="width: 200px;" placeholder="Searsh">
-            <input class="js-search-reyting-input form-control ms-5 style" type="number" style="width: 200px;" placeholder="Searsh reyting">
+        <form class="js-form" action="https://echo.htmlacademy.ru" method="get">
+         <div class="js-search-inputs d-flex justify-content-between">
+            <input class="js-search-input form-control style" name="search-title" type="search" style="width: 200px;" placeholder="Searsh">
+            <input class="js-search-reyting-input form-control ms-5 style" name="search-reyting=>" type="number" style="width: 200px;" placeholder="Searsh reyting">
             <select class="form-select ms-5 style" style="width:200px ;" name="categori" id="categories"></select>
             <select class="form-select ms-5 style" style="width:200px ;" name="tartib" id="tartib"></select>
+            <button class="js-form-btn btn btn-primary" style="width: 80px;">Ok</button>
           </div>
         </form>
         <ul class="js-kinolar-list list-unstyled mt-3 d-flex justify-content-between flex-wrap"></ul>
@@ -28,7 +29,7 @@
     <li class="js-kinolar-item border-css d-flex justify-content-center flex-column my-2 p-2" style="width:500px;">
       <img class="js-kino-img" src="" alt="">
       <h5 class="js-kino-title text-center text-white"></h5>
-      <p class="js-kino-fulltitle text-center text-white"></p>
+      <p class="js-kino-movie-year text-center text-white"></p>
       <p class="js-kino-categories text-center text-white"></p>
       <p class="js-kino-reytinggi text-center text-white"></p>
       <a class="js-kino-trailer text-centerz btn btn-primary w-25 m-auto" href="" target="_blank">Trailer</a>

@@ -1,3 +1,3 @@
-let $ = function(selector, where = document){
-  return where.querySelector(selector);
+let $ = function(selector, a = document){
+  return a.querySelector(selector);
 }
