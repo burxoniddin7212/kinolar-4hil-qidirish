@@ -147,6 +147,7 @@ let renderSearch = function(moviesArry){
       })
     }
 
+    
     if(elSearchSort.value == "Yil =>"){
       sortMovies  = readyMoviesArr.sort(function(a,b) {
         return a.movie_year - b.movie_year
