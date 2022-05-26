@@ -45,7 +45,7 @@ let logMovies = function(film){
   $(".js-kino-reytinggi", elTemplateClone).textContent = `Reyting: ${film.imdb_rating}`;
   $(".js-kino-trailer", elTemplateClone).href = film.trailer;
   $(".btn-modal-modal", elTemplateClone).id = film.id;
-  $(".btn-modal-modal", elTemplateClone).setAttribute("data-bs-target", `#${film.id}`);
+  $(".btn-modal-modal", elTemplateClone).setAttribute("data-bs-target", `#aa${film.id}`);
 
   return elTemplateClone;
 }
@@ -198,7 +198,7 @@ let logMoviesModal = function(){
     let elTemplateModalClone = elTemplatemodal.cloneNode(true);
 
     $(".js-film-summary", elTemplateModalClone).textContent = film.summary;
-    $(".div-modal", elTemplateModalClone).id = film.id;
+    $(".div-modal", elTemplateModalClone).id = `aa${film.id}`;
 
     fragmentModal.append(elTemplateModalClone);
   
