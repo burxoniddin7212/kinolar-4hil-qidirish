@@ -6,7 +6,11 @@ let elSearchSelectCategories = $("#categories", elForm);
 let elSearchSort = $("#tartib", elForm);
 let elOkbtn = $(".js-form-btn", elForm);
 let elKinolarList = $(".js-kinolar-list");
+let sectionn = $(".div-div-modal");
 let elTemplate = $("#js-template").content;
+let elTemplatemodal = $("#js-template-modal").content;
+
+
 
 let sortMovies = [];
 
@@ -32,7 +36,7 @@ let normalizeMovies =  movies.map((movie, i) =>{
 //Tamplatega qiymatlar berish funksiyasi
 let logMovies = function(film){
   let elTemplateClone = elTemplate.cloneNode(true);
-
+  
   $(".js-kino-img", elTemplateClone).src = film.smallPoster;
   $(".js-kino-img", elTemplateClone).alt = film.title;
   $(".js-kino-title", elTemplateClone).textContent = `Title: ${film.title}`;
@@ -40,16 +44,18 @@ let logMovies = function(film){
   $(".js-kino-categories", elTemplateClone).textContent = `Categories: ${film.categories}`;
   $(".js-kino-reytinggi", elTemplateClone).textContent = `Reyting: ${film.imdb_rating}`;
   $(".js-kino-trailer", elTemplateClone).href = film.trailer;
+  $(".btn-modal-modal", elTemplateClone).id = film.id;
+  $(".btn-modal-modal", elTemplateClone).setAttribute("data-bs-target", `#${film.id}`);
 
   return elTemplateClone;
 }
 
 //Render funkisyasi
-let renderKinolar = function(normalizeMovies){
+let renderKinolar = function(a){
   elKinolarList.innerHTML = "";
   let fragment = document.createDocumentFragment();
 
-  normalizeMovies.forEach((film) => {
+  a.forEach((film) => {
     fragment.append(logMovies(film));
   })
   elKinolarList.append(fragment);
@@ -68,6 +74,8 @@ let numberCategories = function(){
       }
     })
   })
+
+  numberCategorie.sort();
   numberCategorie.unshift("All");
    return numberCategorie
 }
@@ -134,7 +142,6 @@ let renderSearch = function(moviesArry){
       sortMovies = readyMoviesArr.sort((a,b)=> b.title.localeCompare(a.title))
       }
 
-
     if(elSearchSort.value == "Reytingi =>"){
       sortMovies  = readyMoviesArr.sort(function(a,b) {
        return a.imdb_rating - b.imdb_rating
@@ -147,7 +154,7 @@ let renderSearch = function(moviesArry){
       })
     }
 
-    
+
     if(elSearchSort.value == "Yil =>"){
       sortMovies  = readyMoviesArr.sort(function(a,b) {
         return a.movie_year - b.movie_year
@@ -171,7 +178,34 @@ let renderSearch = function(moviesArry){
 elOkbtn.addEventListener("click", function(evt) {
   evt.preventDefault();
 
-  //console.log("salom");
-
   renderKinolar(renderSearch(normalizeMovies));
 })
+
+
+
+
+//console.log(normalizeMovies);
+
+
+
+
+
+let logMoviesModal = function(){
+  let fragmentModal = document.createDocumentFragment();
+
+  normalizeMovies.forEach((film) => {
+
+    let elTemplateModalClone = elTemplatemodal.cloneNode(true);
+
+    $(".js-film-summary", elTemplateModalClone).textContent = film.summary;
+    $(".div-modal", elTemplateModalClone).id = film.id;
+
+    fragmentModal.append(elTemplateModalClone);
+  
+  })
+  
+  sectionn.append(fragmentModal);
+
+}
+
+logMoviesModal();

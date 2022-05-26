@@ -9,9 +9,13 @@
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+  
+
   <section class="secttion">
+    <div class="div-div-modal"></div>
     <div class="container">
       <div class="inner mt-4">
+      </div>
         <form class="js-form" action="https://echo.htmlacademy.ru" method="get">
          <div class="js-search-inputs d-flex justify-content-between">
             <input class="js-search-input form-control style" name="search-title" type="search title" style="width: 200px;" placeholder="Search title">
@@ -23,8 +27,11 @@
         </form>
         <ul class="js-kinolar-list list-unstyled mt-3 d-flex justify-content-between flex-wrap"></ul>
       </div>
-    </div>
+    
+   
+      
   </section>
+
   <template id="js-template">
     <li class="js-kinolar-item border-css d-flex justify-content-center flex-column my-2 p-2" style="width:500px;">
       <img class="js-kino-img" src="" alt="">
@@ -32,9 +39,24 @@
       <p class="js-kino-movie-year text-center text-white"></p>
       <p class="js-kino-categories text-center text-white"></p>
       <p class="js-kino-reytinggi text-center text-white"></p>
-      <a class="js-kino-trailer text-centerz btn btn-primary w-25 m-auto" href="" target="_blank">Trailer</a>
+      <div class="d-flex justify-content-center gap-2">
+        <a class="js-kino-trailer text-center btn btn-primary w-25 d-inline-block ms-2" href="" target="_blank">Trailer</a>
+        <button class="btn-modal-modal buttons read_btn text-center btn btn-primary w-25 d-inline-block" data-bs-toggle="modal"
+        >Read</button>
+      </div>
     </li>
   </template>
+  
+<template id="js-template-modal">
+  <div class="div-modal modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-style">
+        <p class="js-film-summary"></p>
+      </div>
+    </div>
+  </div>
+</template>
+    
   <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="./js/movies.js"></script>
   <script src="./js/utilis.js"></script>
